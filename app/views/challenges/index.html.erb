@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h1>Challenges</h1>
+</div>
+
+<h2>Defending</h2>
+<ul>
+  <% @defending.each do |challenge| %>
+    <li><%= link_to challenge_path(challenge) do %><%= gravatar_image_tag challenge.challenger.email %> <%= challenge.challenger.name %> on <%= challenge.tournament.name %><% end %></li>
+  <% end %>
+</ul>
+
+<h2>Challenging</h2>
+<ul>
+  <% @challenging.each do |challenge| %>
+    <li><%= link_to challenge_path(challenge) do %><%= gravatar_image_tag challenge.defender.email %> <%= challenge.defender.name %> on <%= challenge.tournament.name %><% end %></li>
+  <% end %>
+</ul>
